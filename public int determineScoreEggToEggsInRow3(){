@@ -1,0 +1,111 @@
+public int determineScoreEggToEggsInRow3(){
+        List<Egg> listOfRemainingEggs = getListOfEggsInWorld();
+        List<Egg> startListOfEggs = getListOfEggsInWorld();
+        ArrayList<String> listWithCoordinatesEggs = coordinates();
+        int scoreEggToEggsInRow = 10000;
+        int distance = 0;
+        int xCoordCurrent = 2;
+        int yCoordCurrent = 1;
+        int scoreRemainingEggs = 0;
+        while (! listWithCoordinatesEggs.isEmpty()){
+
+            listWithCoordinatesEggs.remove("(" + xCoordCurrent + "," + yCoordCurrent + ")");
+            yCoordCurrent++;
+            if (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + yCoordCurrent + ")") && (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + (yCoordCurrent+1) + ")" ) || listWithCoordinatesEggs.contains( "(" + (xCoordCurrent+1) + "," + yCoordCurrent + ")") || listWithCoordinatesEggs.contains("(" + (xCoordCurrent-1) + "," + yCoordCurrent + ")"))){
+                listWithCoordinatesEggs.remove("(" + xCoordCurrent + "," + yCoordCurrent + ")");
+                for(Egg egg : listOfRemainingEggs){
+                    if(egg.getX() == xCoordCurrent && egg.getY() == yCoordCurrent){
+                        listOfRemainingEggs.remove(egg);
+                    }
+                    else{}
+                }
+                distance++;
+                System.out.println("distance" + distance);
+            }
+            else{
+                yCoordCurrent--;
+                xCoordCurrent++;
+                if (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + yCoordCurrent + ")") && (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + (yCoordCurrent-1) + ")" ) || listWithCoordinatesEggs.contains("(" + (xCoordCurrent+1) + "," + yCoordCurrent + ")" ) || listWithCoordinatesEggs.contains("(" + (xCoordCurrent-1) + "," + yCoordCurrent + ")" ))){
+                    listWithCoordinatesEggs.remove("(" + xCoordCurrent + "," + yCoordCurrent + ")");
+                    for(Egg egg : listOfRemainingEggs){
+                        if(egg.getX() == xCoordCurrent && egg.getY() == yCoordCurrent){
+                            listOfRemainingEggs.remove(egg);
+                        }
+                        else{}
+                    }
+
+                    distance++;
+                    System.out.println("distance1" + distance);
+                }
+                else{
+                    xCoordCurrent--;
+                    yCoordCurrent--;
+                    if (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + yCoordCurrent + ")") && (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + (yCoordCurrent+1) + ")" ) || listWithCoordinatesEggs.contains("(" + (xCoordCurrent+1) + "," + yCoordCurrent + ")" ) || listWithCoordinatesEggs.contains("(" + (xCoordCurrent-1) + "," + yCoordCurrent + ")" ))){
+                        listWithCoordinatesEggs.remove("(" + xCoordCurrent + "," + yCoordCurrent + ")");
+                        for(Egg egg : listOfRemainingEggs){
+                            if(egg.getX() == xCoordCurrent && egg.getY() == yCoordCurrent){
+                                listOfRemainingEggs.remove(egg);
+                            }
+                            else{
+                            }
+                        }
+
+                        distance++;
+                        System.out.println("distance2" + distance);
+                    }
+                    else{
+                        yCoordCurrent++;
+                        xCoordCurrent--;
+                        if (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + yCoordCurrent + ")") && (listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + (yCoordCurrent+1) + ")" ) || listWithCoordinatesEggs.contains("(" + xCoordCurrent + "," + (yCoordCurrent-1) + ")" ) || listWithCoordinatesEggs.contains("(" + (xCoordCurrent-1) + "," + yCoordCurrent + ")" ))){
+                            listWithCoordinatesEggs.remove("(" + xCoordCurrent + "," + yCoordCurrent + ")");
+                            for(Egg egg : listOfRemainingEggs){
+                                if(egg.getX() == xCoordCurrent && egg.getY() == yCoordCurrent){
+                                    listOfRemainingEggs.remove(egg);
+                                }
+                                else{}
+                            }distance++;
+                            System.out.println("distance4" + distance);
+                        }
+                        else{
+                            xCoordCurrent++;
+                            System.out.println("distance5" + distance);
+                            int smallestDistance = 10000;
+                            if(!listOfRemainingEggs.isEmpty()){
+                            Egg bestEgg = startListOfEggs.get(0);
+                            while(! listOfRemainingEggs.isEmpty()){
+                                
+                                for (Egg egg : startListOfEggs){
+                                    
+                                    Egg remainingEgg = listOfRemainingEggs.get(0);
+
+                                    int distance2 = determineDistanceEggToEgg(remainingEgg.getX(), remainingEgg.getY(), egg.getX(), egg.getY());
+
+                                    if(distance2 < smallestDistance)
+                                    {
+                                        smallestDistance = distance2;
+                                        bestEgg = egg;
+                                    }
+
+                                }
+                                scoreRemainingEggs =+ smallestDistance;
+
+                                listOfRemainingEggs.remove(0);
+                            }
+
+                        }
+                    }
+
+                    }
+
+                }
+
+            }
+
+
+        }
+        scoreEggToEggsInRow = distance + scoreRemainingEggs;
+        System.out.println(scoreEggToEggsInRow);
+
+        return scoreEggToEggsInRow;
+
+    }

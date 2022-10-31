@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   min-width: 100%;
+}
+.flex-container1 {
+  display: flex;
+flex-direction: row;  
+  flex-wrap: nowrap;
+  justify-content: space-around;
+
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.flex-container3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.flex-container4 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: Maroon;
+}
+
+.flex-containergeslachten {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: Maroon;
+}
+
+.flex-containergeslachten > div {
+  background-color: black;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 10px;
+}
+.flex-container > div {
+  margin: 10px;
+  text-align: center;
+  
+}
+
+header {
+    
+    background-color: White;
+    height: 200px;
+    width: 100%;
+}
+h1.title {
+    font-family: "Arial";
+    font-size: 450%;   
+    color: black;
+    position: absolute;
+    left: 730px;
+    top: 70px;
+    
+}
+
+figure.fotobanner > img {
+  position: absolute;
+  left: 0;
+  height: 200px;
+    width: auto;  
+    top: 0px;
+    
+}
+
+section {
+    background-color: Maroon;
+    width: auto;
+   
+
+}
+article {
+    
+    padding: 20px;       
+    background-color: Maroon;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    
+}
+nav.verwijzing {
+    background-color: Maroon;
+    height: 50px;
+}
+.menu {
+    font-family: "Arial";
+    color: white;
+    font-size: 200%;
+    text-decoration: none;
+    padding: 5px;
+}
+
+footer {
+  width: 100%;
+}
+footer#footer {
+    position: static;
+    
+    padding: 1rem;
+    background-color: Maroon;
+    text-align: center;
+    font-family: "Arial";
+    width: auto;
+}
+h1.starttitle {
+    font-family: "Arial";
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: CadetBlue;
+  border: 5px DarkSlateGray;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 15px 32px;
+  width: 120px;
+  height: 55px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 4px 2px;
+
+    
+}
+p{
+    font-family: "Arial";
+}
+
+body {
+    background-color: white;
+}
+
+
+img.contact{
+    position: relative;
+    left: 700px;
+    bottom: 100px;
+    height: 100%
+    width: 100%;
+}
+img.fotomij{
+    
+    height: 50%
+    width: 50%;
+}
+
+img.fotokring{
+    }
+
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree 
+{overflow: scroll;}
+
+.tree ul {
+  padding-top: 20px; 
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  display: flex;
+
+}
+
+.tree li {
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+  content: '';
+  position: absolute; top: 0; right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%; height: 20px;
+}
+.tree li::after{
+  right: auto; left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0; height: 20px;
+}
+
+.tree li a{
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+  background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+  border-color:  #94a0b4;
+}
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
