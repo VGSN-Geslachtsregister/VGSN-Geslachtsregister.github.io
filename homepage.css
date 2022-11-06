@@ -70,7 +70,7 @@ header {
     
     background-color: White;
     height: 200px;
-    width: auto;
+    width: 100%;
 }
 h1.title {
     font-family: "Arial";
@@ -100,12 +100,12 @@ section {
 article {
     
     padding: 20px;       
-    background-color: blue;
+    background-color: Maroon;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    width: auto;
+    width: 100%;
     
 }
 nav.verwijzing {
@@ -121,7 +121,7 @@ nav.verwijzing {
 }
 
 footer {
-  width: auto;
+  width: 100%;
 }
 footer#footer {
     position: static;
@@ -178,33 +178,27 @@ img.fotomij{
 img.fotokring{
     }
 
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
 
-
-
-/*geslachtCSS*/
-
-.tree {
-  display: flex;
-overflow: scroll;
-
-}
-
+.tree 
+{overflow: scroll;}
 
 .tree ul {
-  padding-top: 20px; position: relative;
-  
+  padding-top: 20px; 
+  position: relative;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
-  
+  display: flex;
+
 }
 
 .tree li {
-  float: left; text-align: center;
+  text-align: center;
   list-style-type: none;
   position: relative;
   padding: 20px 5px 0 5px;
-  
   
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -228,7 +222,6 @@ overflow: scroll;
 any siblings*/
 .tree li:only-child::after, .tree li:only-child::before {
   display: none;
-
 }
 
 /*Remove space from the top of single children*/
