@@ -12,15 +12,14 @@
     <body>
         <header>
             <div class="flex-container1">
-                
+                <div>
                     <figure class="fotobanner">
-                        <img src="./image/Bannerlogo.png">
+                        <img src="./image/headerp.png">
                     </figure>
-               
-                    <h1 class="title">
-                        Geslachtsregister
-                    </h1>
-                
+                </div>
+                <div>
+                    
+                </div>
                 
             </div>
         </header>
@@ -29,7 +28,7 @@
             <div class="flex-container">
                 <div>
             
-            <a class="menu" href="homepage.html">
+            <a class="menu" href="index.html">
                 Start
             </a>
             </div>
@@ -56,13 +55,51 @@
                 
             </h1>
             <br>
-        
-            <p>
-                Hoi, vul je naam in om je geslacht te vinden.
-        
-        
-            <img class="fotokring" src="./image/kleinekring.png">
-            </img>
+        <section>
+        <h2>Vind jouw geslacht!</h2>
+
+<p>Vul hieronder de naam van een VGSN'er in die op dit moment lid is, om te vinden uit welk geslacht dit lid komt.
+<br>
+Let op: voeg de eerste letter van de achternaam toe als deze naam vaker voorkomt (laat tussenvoegsels achterwegen).</p>
+
+<input type="text" id="msg" ><br>
+  <button class="button2" onclick="displayMessage()">Zoek</button>
+  
+  
+<p id="demo"></p>
+
+<script>
+const hein = ["debora", "Debora", "Denise", "denise", "dorine", "Dorine", "Fransien", "fransien", "ilse", "Ilse", "janine", "Janine", "jiayi", "Jiayi", "Joline", "joline", "judit", "Judit", "Judith S", "judith s", "Judith s", "judith S", "Sjudith", "sjudith", "Laura", "laura", "léone", "leone", "Leone", "Léone", "lois", "Lois", "Marieke", "marieke", "Marrit", "marrit", "Nora", "nora", "rianne", "Rianne", "susanne", "Susanne", "Amyke", "amyke", "aniek", "Aniek", "cecile", "Cecile"];
+const meri = ["Hans", "hans", "joel", "Joel", "joël", "Joël", "jorian", "Jorian", "kei", "Kei", "Ruurd", "ruurd", "simon", "Simon", "Sjoerd B", "sjoerd b", "Sjoerd b", "sjoerd B", "sjoerd", "Sjoerd", "Sjoerd vH", "Sjoerd H", "sjoerd h", "Sjoerd h", "sjoerd H", "sjoerd v h", "zepp", "Zepp"];
+const renate = ["casper", "Casper", "chantal", "Chantal", "Daniek", "daniek", "Gerjan", "gerjan", "harm", "Harm", "jesse", "Jesse", "lex", "Lex", "marijke", "Marijke", "martijn", "Marijn", "martin", "Martin", "naomi", "Naomi", "Niels", "niels", "Richelle", "richelle", "roward", "Roward", "Stefan", "stefan", "steven", "Steven", "Theo", "theo"];
+const tammo = ["eva", "mirthe", "lise", "else", "imke", "rachel", "roeline", "sophie", "tamar", "vanya", "Eva", "Mirthe", "Lise", "Else", "Imke", "Rachel", "Roeline", "Sophie", "Tamar", "Vanya", "Annemiek", "annemiek"];
+const jacolien = ["judith", "Judith", "Judith G", "judith g", "judith G", "Judith g"];
+const katrien = ["bas", "Bas", "lars", "Lars"];
+
+function displayMessage(){
+let themsg = document.getElementById("msg").value;
+
+if (hein.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Hein Christiaan</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (meri.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Meri</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (renate.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Renate</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (tammo.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Tammo</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (jacolien.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Jacoline</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (katrien.includes(themsg) == true) {
+  document.getElementById("demo").innerHTML = "Jij komt uit het geslacht van <b>Katrien</b>. Bekijk je stamboom onder het kopje 'geslachten'.";
+} else if (themsg == ""){
+document.getElementById("demo").innerHTML = "Vul een naam in om de stamboom van iemand te vinden.";
+} else {
+document.getElementById("demo").innerHTML = "Helaas, jouw stamboom kon niet gevonden worden :( Kijk goed of de naam goed geschreven is (bij een dubbele naam alleen de eerste letter van de achternaam toevoegen: Kees F) en of het lid nog wel lid is.";
+}
+}
+</script>
+           
+          </section>
        
 
         </article>

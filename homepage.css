@@ -74,13 +74,24 @@ header {
 }
 h1.title {
     font-family: "Arial";
-    font-size: 450%;   
+    font-size: 500%;   
     color: black;
-    position: absolute;
+    /*position: absolute;*/
     left: 730px;
     top: 70px;
     
 }
+
+h2 {
+    font-family: "Arial";
+      
+    color: black;
+    /*position: absolute;*/
+    left: 730px;
+    top: 70px;
+    
+}
+
 
 figure.fotobanner > img {
   position: absolute;
@@ -92,7 +103,7 @@ figure.fotobanner > img {
 }
 
 section {
-    background-color: Maroon;
+    background-color: white;
     width: auto;
    
 
@@ -100,12 +111,14 @@ section {
 article {
     
     padding: 20px;       
+    box-sizing: border-box;
     background-color: Maroon;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
     width: 100%;
+    height: 100vh;
     
 }
 nav.verwijzing {
@@ -120,20 +133,20 @@ nav.verwijzing {
     padding: 5px;
 }
 
-footer {
-  width: 100%;
-}
+
 footer#footer {
     position: static;
     
     padding: 1rem;
+    box-sizing: border-box;
     background-color: Maroon;
     text-align: center;
     font-family: "Arial";
-    width: auto;
+    width: 100%;
 }
 h1.starttitle {
     font-family: "Arial";
+    font-size: 50px;
 }
 
 .button {
@@ -286,3 +299,30 @@ right connector from last child*/
 
 /*Thats all. I hope you enjoyed it.
 Thanks :)*/
+
+.button2 {
+  background-color: DimGrey;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button2:hover {background-color: black}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
