@@ -92,6 +92,15 @@ h2 {
     
 }
 
+h3 {
+    font-family: "Arial";
+      
+    color: black;
+    /*position: absolute;*/
+    left: 730px;
+    top: 70px;
+    
+}
 
 figure.fotobanner > img {
   position: absolute;
