@@ -84,19 +84,17 @@ h1.title {
 
 h2 {
     font-family: "Arial";
-      
-    color: black;
-    /*position: absolute;*/
+       color: black;
+   
     left: 730px;
     top: 70px;
     
 }
 
 h3 {
-    font-family: "Arial";
-      
+    font-family: "Arial";      
     color: black;
-    /*position: absolute;*/
+    
     left: 730px;
     top: 70px;
     
